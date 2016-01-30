@@ -3,8 +3,11 @@
 . workflowHandler.sh
 
 getOFCacheDir() {
-	local OFCD="${HOME}/Library/Caches/com.omnigroup.OmniFocus"
-	if [ ! -d "$OFCD" ]; then 
+    #If you are using Omnifocus from Omni's website
+    local OFCD="${HOME}/Library/Containers/com.omnigroup.OmniFocus2/Data/Library/Caches/com.omnigroup.OmniFocus2"
+    #If you are using Omnifocus from the App Store, uncomment this line
+    #local OFCD="${HOME}/Library/Containers/com.omnigroup.OmniFocus2.MacAppStore/Data/Library/Caches/com.omnigroup.OmniFocus2.MacAppStore"
+	if [ ! -d "$OFCD" ]; then
 		OFCD=$OFCD.MacAppStore;
 	fi
 	echo "$OFCD"
